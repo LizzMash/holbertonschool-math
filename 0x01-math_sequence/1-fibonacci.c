@@ -1,7 +1,7 @@
 /*
 * 1-fibonacci.c - prints fibonacci secuence
-* Author: Noluyolo Ndungane
-* Date: March 23, 2022
+* Author: Elizabeth Mashilo
+* Date: March 29, 2022
 */
 
 #include "fibonacci.h"
