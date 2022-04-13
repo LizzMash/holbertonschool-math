@@ -1,55 +1,26 @@
-/*
-* 0 - ODE method
-* Author: Elizabeth Mashilo
-* Date: April 13, 2022
-*/
-
 #include <stdio.h>
 #include <math.h>
+#include "euler.h"
 
 /**
-* euler_method - euler_method
-* @a: double
-* @b: double
-* @steps: int
-* Return: double
-*/
-
-double euler_method(double a, double b, int steps)
+ *Euler - euler method
+ *@euler: path
+ *@name: name
+ *@x0: double
+ *@y0: double
+ *@T: double
+ *@n: int 
+ */
+void Euler(FILE *euler, char *name, double x0, double y0, double T, int n)
 {
-int i;
-double width, alfa, beta, gamma, x, xa;
-/* same file to plot the pendulum ??? */
-/* EULER */
-/* ODE u''(x) = - sin(u(x)) */
-/* u(0) = 0 */
-/* u'(0) = 1 */
-/* Yn + 1 = Yn + h f'(x)  */
-/* out to dat file */
-/* run gunplot from command line?? */
-/* x		x'		dy/dx  */
-/* ----------------------------------- */
-/* 0		1		- sin(u(0)) -> -sin(0) */
-/* x+width	1+(-sin(x))	- sin(u(x')) */
-/* initial conditions */
-x = 0;
-xa = 1;
-/* steps */
-i = steps;
-/* increment */
-width = (b - a) / steps;
-/* create a loop to walk steps */
-for (i = 0; i <= steps; i++)
-{
-/* print steps */
-printf("x:%lf x':%lf dy/dx:%lf \n", alfa, beta, gamma);
-/* append to file .dat */
-alfa += x + width;
-beta += xa + (-sin(alfa));
-gamma +=  -sin(beta);
+	euler = fopen("C://program.txt","name");
+	x0 = 2 * (T/n)
+	if (euler == NULL)
+	{
+		printf("Error!");
+		exit(1);
+	}
 
-}
-
-/* Lets see */
-return(gamma);
+	fprintf(euler, "%d",x0);
+	fclose(euler);
 }
